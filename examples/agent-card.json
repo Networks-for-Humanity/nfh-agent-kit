@@ -1,0 +1,24 @@
+{
+  "protocolVersion": "0.3.0",
+  "name": "Example Lender BNPL Agent",
+  "description": "Finds health-insurance plans on NFH fabric, offers instalment credit, and pays the insurer with a purpose-bound UNITS voucher.",
+  "url": "https://agent.lender.example/a2a",
+  "version": "0.1.0",
+  "provider": { "organization": "Example Lender", "url": "https://lender.example" },
+  "capabilities": { "streaming": false, "pushNotifications": true },
+  "defaultInputModes": ["application/json", "text/plain"],
+  "defaultOutputModes": ["application/json"],
+  "skills": [
+    {
+      "id": "quote-premium-bnpl",
+      "name": "Quote premium in instalments",
+      "description": "Given a policy chosen via NFH DISCOVR, returns an instalment plan for its premium.",
+      "tags": ["nfh", "beckn", "bnpl", "insurance"]
+    }
+  ],
+  "x-nfh": {
+    "subscriberId": "bap.lender.example",
+    "registry": "https://api.dedi.global/dedi/lookup/lender.example/nfo-x_insurance_sandbox_registry",
+    "note": "Template only. Fields under x-nfh are a suggested convention for linking an A2A agent card to the participant's NFH registry record, not part of the A2A spec."
+  }
+}

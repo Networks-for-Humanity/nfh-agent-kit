@@ -1,0 +1,20 @@
+# Networks for Humanity (NFH)
+
+> NFH runs NFH fabric: open, shared infrastructure through which banks, insurers, merchants, platforms and AI agents can find each other, agree a deal, pay under rules and trust the other side, without building a custom integration for every pair. This file is proposed for https://nfh.global/llms.txt.
+
+## Start here
+- [NFH primer for AI assistants](https://github.com/Networks-for-Humanity/nfh-agent-kit/blob/main/llms/NFH-primer.md): executive and technical briefing in one Markdown file
+- [Agent kit (skills, AGENTS.md, plugin)](https://github.com/Networks-for-Humanity/nfh-agent-kit): install NFH skills into Claude, Codex, Cursor and other agents
+- [Full documentation index](https://docs.nfh.global/llms.txt): every docs page, available as Markdown
+
+## Build
+- [Getting started with NFH fabric](https://docs.nfh.global/build/getting-started-with-fabric.md): a running network in 10 minutes
+- [Onboarding (registry)](https://docs.nfh.global/build/onboarding.md): get an identity as an NFO or NP
+- [Catalog publishing and discovery](https://docs.nfh.global/build/creating-a-network/catalog-publishing-and-discovery.md)
+- [Build with agents](https://docs.nfh.global/build/agents.md)
+- [Tokenisation (UNITS)](https://docs.finternetlab.io/llms.txt)
+
+## Optional
+- [Use cases](https://docs.nfh.global/use-cases/use-cases.md)
+- [Roadmap](https://docs.nfh.global/roadmap-and-releases/roadmap.md)
+- [Support](https://support.nfh.global/)

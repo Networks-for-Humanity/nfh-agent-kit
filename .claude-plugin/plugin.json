@@ -1,0 +1,10 @@
+{
+  "name": "nfh",
+  "description": "Build on NFH fabric (Networks for Humanity): registry onboarding, catalogue publishing and discovery, Beckn v2 transactions via ONIX, UNITS programmable value, verifiable credentials and a local devkit.",
+  "version": "0.1.0",
+  "author": { "name": "Networks for Humanity", "url": "https://nfh.global" },
+  "homepage": "https://docs.nfh.global",
+  "repository": "https://github.com/Networks-for-Humanity/nfh-agent-kit",
+  "license": "Apache-2.0",
+  "keywords": ["nfh", "beckn", "dedi", "open-networks", "tokenisation", "verifiable-credentials"]
+}

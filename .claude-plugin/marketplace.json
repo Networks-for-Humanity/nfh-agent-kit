@@ -1,0 +1,8 @@
+{
+  "name": "nfh",
+  "owner": { "name": "Networks for Humanity", "url": "https://nfh.global" },
+  "metadata": { "description": "Official Networks for Humanity agent kit", "version": "0.1.0" },
+  "plugins": [
+    { "name": "nfh", "source": "./", "description": "Skills for building on NFH fabric" }
+  ]
+}
