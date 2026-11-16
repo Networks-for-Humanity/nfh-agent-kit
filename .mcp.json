@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "nfh-docs":       { "type": "http", "url": "https://docs.nfh.global/~gitbook/mcp" },
+    "finternet-docs": { "type": "http", "url": "https://docs.finternetlab.io/~gitbook/mcp" },
+    "dedi-docs":      { "type": "http", "url": "https://dedi-global.gitbook.io/docs/~gitbook/mcp" }
+  }
+}

@@ -1,8 +1,28 @@
 {
   "name": "nfh",
-  "owner": { "name": "Networks for Humanity", "url": "https://nfh.global" },
-  "metadata": { "description": "Official Networks for Humanity agent kit", "version": "0.1.0" },
+  "owner": {
+    "name": "Networks for Humanity",
+    "url": "https://nfh.global"
+  },
+  "metadata": {
+    "description": "Official Networks for Humanity agent kit",
+    "version": "0.2.0"
+  },
   "plugins": [
-    { "name": "nfh", "source": "./", "description": "Skills for building on NFH fabric" }
+    {
+      "name": "nfh",
+      "source": "./",
+      "description": "Skills for building on NFH fabric"
+    },
+    {
+      "name": "beckn-agents",
+      "source": {
+        "source": "git-subdir",
+        "url": "beckn/beckn-agents",
+        "path": "adapters/claude-code",
+        "ref": "main"
+      },
+      "description": "Beckn community skills: Beckn v2 payloads, schemas, ONIX config, DeDi onboarding, devkit builder. Maintained upstream at github.com/beckn/beckn-agents."
+    }
   ]
 }

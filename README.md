@@ -16,6 +16,11 @@ git clone https://github.com/Networks-for-Humanity/nfh-agent-kit
 nfh-agent-kit/scripts/install.sh codex     # or: claude | agents | <folder>
 ```
 
+**Pi ([pi.dev](https://pi.dev))**
+```bash
+pi install git:github.com/Networks-for-Humanity/nfh-agent-kit
+```
+
 **Claude.ai, ChatGPT or any chat assistant:** upload [`llms/NFH-primer.md`](llms/NFH-primer.md) and ask your question.
 
 ## What's inside
@@ -23,8 +28,9 @@ nfh-agent-kit/scripts/install.sh codex     # or: claude | agents | <folder>
 | Path | What it is | Standard |
 |---|---|---|
 | [`AGENTS.md`](AGENTS.md) | How any coding agent should work with NFH | [AGENTS.md](https://agents.md) |
-| [`skills/`](skills) | Seven step-by-step workflows, listed below | [Agent Skills](https://agentskills.io) |
-| [`llms/`](llms) | `llms.txt` proposed for nfh.global, plus the one-file NFH primer | [llms.txt](https://llmstxt.org) |
+| [`skills/`](skills) | Ten step-by-step workflows, listed below | [Agent Skills](https://agentskills.io) |
+| [`llms/`](llms) | `llms.txt` proposed for nfh.global, the one-file NFH primer, and offline page indexes for the NFH, Finternet and DeDi docs (`scripts/sync-docs.sh`) |
+| [`.mcp.json`](.mcp.json) | Live docs servers for NFH, Finternet and DeDi | MCP | [llms.txt](https://llmstxt.org) |
 | [`.claude-plugin/`](.claude-plugin) | One-command install for Claude Code | Claude Code plugins |
 | [`mcp/`](mcp) | Plan for an MCP server that acts on the sandbox (v2) | [MCP](https://modelcontextprotocol.io) |
 | [`examples/`](examples) | The BNPL insurance-premium walkthrough, and an A2A agent-card template | A2A |
@@ -41,8 +47,13 @@ nfh-agent-kit/scripts/install.sh codex     # or: claude | agents | <folder>
 | `nfh-units` | Move money and assets that carry rules (UNITS) |
 | `nfh-credentials` | Issue and verify credentials (VC on Edge / OpenCred) |
 | `nfh-devkit` | Run a full network on your laptop in about 10 minutes |
+| `nfh-observability` | Trace transactions and get audit proofs |
+| `nfh-network-operator` | Start and govern a network: manifest, Rego policies, migrations |
+| `nfh-explain` | Explain NFH to executives, regulators and partners |
 
-For Beckn payload, schema and ONIX config details, the skills defer to [beckn/beckn-agents](https://github.com/beckn/beckn-agents).
+The marketplace also lists **`beckn-agents`** (`/plugin install beckn-agents@nfh`): the Beckn community's own skills for payloads, schemas, ONIX config, DeDi onboarding and devkits. They're pulled straight from [beckn/beckn-agents](https://github.com/beckn/beckn-agents), so they stay current.
+
+Installing `nfh` also connects three documentation servers (MCP), for NFH, Finternet and DeDi, so the agent can ask the live docs questions.
 
 ## Contributing
 

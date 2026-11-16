@@ -39,4 +39,22 @@ The step-by-step guides are under https://docs.finternetlab.io/documentation/tok
 | Delivery versus payment | Workflows / multi-sig |
 | Refund that must return to the lender | Lock rules plus a post-hook |
 
+## Finternet docs map (fetch before answering)
+
+| Topic | Page |
+|---|---|
+| Quickstart | https://docs.finternetlab.io/documentation/building/quickstart.md |
+| Accounts, identity (UUIDv7 address, `did:web`, MPC keys) | https://docs.finternetlab.io/documentation/concepts/accounts-and-identity.md |
+| Delegation and RBAC | https://docs.finternetlab.io/documentation/concepts/delegation-and-rbac.md |
+| Account integration in an app | https://docs.finternetlab.io/documentation/app-developer-guide/account-integration.md |
+| Token operations from an app | https://docs.finternetlab.io/documentation/app-developer-guide/token-operations.md |
+| Proxy tokens (an external ledger is authoritative) | https://docs.finternetlab.io/documentation/token-manager-guide/proxy-tokens.md |
+| Custom token programs (Rust) | https://docs.finternetlab.io/documentation/token-manager-guide/custom-programs.md |
+| Token program interface (Rust trait) | https://docs.finternetlab.io/documentation/reference/token-program-interface.md |
+| Adapter integration | https://docs.finternetlab.io/documentation/token-manager-guide/adapter-integration.md |
+| Corporate vouchers (worked use case) | https://docs.finternetlab.io/documentation/use-cases/corporate-vouchers.md |
+| Federation across instances | https://docs.finternetlab.io/api-reference/registry/federation.md |
+
+All 68 pages are listed in [references/finternet-pages.md](references/finternet-pages.md). When the plugin is installed, the `finternet-docs` MCP server can also answer questions directly.
+
 Vouch (purpose-bound value) and Pincer (guarantees) have no public API docs yet, so build these patterns directly on UNITS.

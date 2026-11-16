@@ -11,9 +11,11 @@ description: Entry point for anyone building on NFH fabric (Networks for Humanit
 |---|---|---|
 | Selling or offering something (an insurer, a lender's product, a merchant, a data provider) | **Provider node (PN)** | `nfh-registry`, then `nfh-catalog-discovery` |
 | Building the app where customers search and buy (a super-app, a lender app, an agent) | **Consumer node (CN)** | `nfh-registry`, then `nfh-transact` |
-| Running a whole network for a sector | **Network Facilitator (NFO)** | `nfh-registry` (NFO section) |
 | Moving money or value with rules attached | **Tokenisation user** | `nfh-units` |
 | Issuing or checking proofs (KYC, licences, delegation) | **Issuer or verifier** | `nfh-credentials` |
+| Running a network for a sector, with rules for everyone | **NFO operator** | `nfh-network-operator` |
+| Proving to a regulator or auditor what happened | **Auditor or operator** | `nfh-observability` |
+| Explaining NFH, not building | **Briefing someone** | `nfh-explain` |
 | "Just show me it working" | Anyone | `nfh-devkit` |
 
 Many real use cases combine roles. For example, insurance BNPL needs an insurer PN, a lender CN, UNITS vouchers and a KYC credential. See `examples/bnpl-premium/` in the nfh-agent-kit repo.

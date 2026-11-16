@@ -7,7 +7,7 @@ This file tells any coding agent (Claude, Codex, Copilot, Cursor, Gemini and oth
 ## Ground rules
 
 1. **The docs are the source of truth, not this file.** Every docs page is available as Markdown by adding `.md` to its URL. The full index is at https://docs.nfh.global/llms.txt.
-2. **Ask the docs when unsure.** Send `GET https://docs.nfh.global/index.md?ask=<question>&goal=<user goal>`. It returns an answer with sources. Do this before guessing a field name, endpoint or schema.
+2. **Ask the docs when unsure.** With the plugin installed, use the bundled `nfh-docs`, `finternet-docs` and `dedi-docs` MCP servers. Without them, send `GET https://docs.nfh.global/index.md?ask=<question>&goal=<user goal>`. It returns an answer with sources. Do this before guessing a field name, endpoint or schema.
 3. **Never invent endpoints, schema fields or URLs.** If the docs don't have something, say so and point the user to https://support.nfh.global/.
 4. **Keys stay with the participant.** Never ask the user to paste a private signing key into chat. Generate keys locally, and store them where ONIX expects them (a file or Vault).
 5. **Start in the sandbox.** Use `fabric-devkit` or `beckn/starter-kit` before touching any production network.
@@ -22,8 +22,12 @@ This file tells any coding agent (Claude, Codex, Copilot, Cursor, Gemini and oth
 | Money and assets that carry rules | **UNITS** tokenisation (Finternet Lab) | `nfh-units` | https://docs.finternetlab.io/llms.txt |
 | Prove things: KYC, licences, delegation | **VC on Edge** (OpenCred) | `nfh-credentials` | https://docs.nfh.global/product-documentation/products/vc-on-edge.md |
 | Run a working network on a laptop | `fabric-devkit` / `beckn/starter-kit` | `nfh-devkit` | https://docs.nfh.global/build/getting-started-with-fabric.md |
+| Trace transactions, prove what happened | **Observability & Audit** | `nfh-observability` | https://docs.nfh.global/product-documentation/products/observability-audit.md |
+| Start and govern a whole network (NFO) | Manifest, Rego policies, migrations | `nfh-network-operator` | https://docs.nfh.global/build/creating-a-network.md |
+| Explain NFH to executives, regulators, partners | Primer, use cases, personas | `nfh-explain` | https://docs.nfh.global/use-cases/use-cases.md |
+| Beckn payloads, schemas, ONIX YAML, DeDi files | Beckn community skills | `beckn-agents` plugin | https://github.com/beckn/beckn-agents |
 
-If you don't know which piece the user needs, use the `nfh-start` skill first.
+If you don't know which piece the user needs, use the `nfh-start` skill first. For offline lookups, every docs page is listed in `llms/docs-index-nfh.md`, `llms/docs-index-finternet.md` and `llms/docs-index-dedi.md`.
 
 ## Vocabulary
 
@@ -52,6 +56,7 @@ Every request carries a `context`: `version` "2.0.0", `action`, `messageId`, `tr
 | VC on Edge / OpenCred | Beta |
 | UNITS | Live instances. Writes need a token from an OTP login, so a human has to sign in first |
 | Vouch (purpose-bound value), Pincer (guarantees) | No public API docs yet. Build the same behaviour on UNITS vouchers and pre-hooks |
+| Observability & Audit | Service live; public query API not documented yet |
 
 ## When working in this repo
 
