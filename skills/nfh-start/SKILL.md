@@ -1,6 +1,6 @@
 ---
 name: nfh-start
-description: Entry point for anyone building on NFH fabric (Networks for Humanity). Use when the user mentions NFH, NFH fabric, Networks for Humanity, Beckn v2 networks, DeDi, REGISTR, DISCOVR, ONIX, UNITS or Finternet, or asks "how do I build X on NFH". Works out the user's role and use case, then routes to the right NFH skill.
+description: 'Entry point for anyone building on NFH fabric (Networks for Humanity). Use when the user mentions NFH, NFH fabric, Networks for Humanity, Beckn v2 networks, DeDi, REGISTR, DISCOVR, ONIX, UNITS, Finternet, OpenCred, Vouch or Pincer, or asks "how do I build X on NFH". Works out the user''s role and use case, routes to the right NFH skill, and says honestly what is live, beta or not yet public.'
 ---
 
 # Start building on NFH fabric
@@ -33,6 +33,10 @@ State back, in three lines or fewer:
 - Ask the docs: `GET https://docs.nfh.global/index.md?ask=<question>&goal=<goal>`
 - Tokenisation docs: https://docs.finternetlab.io/llms.txt
 - Human help: https://support.nfh.global/ or https://github.com/Networks-for-Humanity/fabric-support
+
+## Products without public APIs
+
+If asked for the API of **Vouch** (purpose-bound value, vouch.finance) or **Pincer** (underwriter-backed guarantees and arbitration, pincer.network), say plainly that neither has public API docs yet, and invent nothing. For Vouch-style behaviour, use UNITS vouchers and pre-hooks (`nfh-units`). For Pincer, point the user to https://support.nfh.global/.
 
 ## Explaining NFH to a non-technical person
 

@@ -1,6 +1,6 @@
 ---
 name: nfh-explain
-description: Explain NFH fabric and Networks for Humanity to anyone — executives, regulators, partners, engineers — in plain language: what it is, why open rails matter, principles, capabilities, personas, sector use cases (insurance BNPL, energy, cross-border commerce, health supply, arbitration, creator economy, agent data marketplaces), FAQs and glossary. Use for pitches, briefings, one-pagers, FAQs, comparisons, or "what is NFH / why should my bank care".
+description: 'Explain NFH fabric and Networks for Humanity to anyone (bank or insurer CEOs, CXOs, regulators, partners, engineers) in plain language: what it is, why open rails matter, principles, capabilities, personas, sector use cases (insurance BNPL, energy, cross-border commerce, health supply, arbitration, creator economy, agent data marketplaces), FAQs and glossary. Use for pitches, briefings, one-pagers, bullet summaries, FAQs, or "explain NFH" / "why should my bank care".'
 ---
 
 # Explain NFH
@@ -13,6 +13,13 @@ description: Explain NFH fabric and Networks for Humanity to anyone — executiv
 | Regulator | Compliance built into the rails, audit trails anyone can verify, participants keep their own data | Crypto framing. UNITS is **not** a blockchain |
 | Head of engineering | The five layers and the open standards behind them (Beckn v2, DeDi, W3C VCs, OpenTelemetry) | Marketing language |
 | Partner or startup | "Connect once, reach every participant", plus the 10-minute devkit | Long roadmaps |
+
+## Must-haves for a CEO or CXO answer
+
+1. Include the integration math: 6 companies means 15 custom integrations today, or 6 connections with NFH (with 20 partners, 190 versus 20).
+2. Name zero protocols or products: no UNITS, Finternet, DID, Beckn, ONIX or "token runtime". Say "a trusted directory", "money that carries its own rules", "proofs that travel".
+3. Tie every point to a business outcome: new distribution, lower fraud, faster partnerships, compliance built in.
+4. No hype lines such as "the most inclusive market in history". Stay factual.
 
 ## Core message
 

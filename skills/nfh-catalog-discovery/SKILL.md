@@ -1,6 +1,6 @@
 ---
 name: nfh-catalog-discovery
-description: Publish a provider's catalogue on NFH fabric so it can be discovered, and search catalogues with DISCOVR. Use when the user wants products, policies, offers or services to be findable, needs to sign and host catalogue files, link a catalog index to their registry record, call POST /discover, handle on_discover callbacks, or debug a catalogue that never appears in results.
+description: 'Publish a provider''s catalogue on NFH fabric so it can be discovered, and search catalogues with DISCOVR. Use when the user wants products, policies, offers or services to be findable, needs to sign and host catalogue files, link a catalog index to their registry record, call POST /discover, handle on_discover callbacks, or debug a catalogue that never appears in results.'
 ---
 
 # Catalogues and DISCOVR

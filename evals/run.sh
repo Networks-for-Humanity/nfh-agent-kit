@@ -21,6 +21,7 @@ run_one() {
   ( cd "$work" && printf '%s' "$prompt" | claude -p --plugin-dir "$kit" \
       --allowedTools "Skill,Read,Glob,Grep,WebFetch,mcp__plugin_nfh_nfh-docs,mcp__plugin_nfh_finternet-docs,mcp__plugin_nfh_dedi-docs" \
       ) > "$out/$id.md" 2>&1
+  [[ $(wc -c < "$out/$id.md") -lt 5 ]] && echo "(empty answer: the agent ended on a tool call with no final text; rerun with: evals/run.sh $id)" >> "$out/$id.md"
   echo "done $id ($(wc -c < "$out/$id.md") bytes)"
 }
 export -f run_one; export kit work out

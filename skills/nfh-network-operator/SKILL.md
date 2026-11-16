@@ -1,6 +1,6 @@
 ---
 name: nfh-network-operator
-description: Operator playbook for creating and running a network on NFH fabric as a Network Facilitator Organisation (NFO) — registering the network, onboarding participants, network manifest, signed Rego policies distributed to ONIX, catalog discovery for the network, migrations from Beckn v1 and the central catalog service. Use when the user wants to start or govern a sector network (insurance, mobility, energy, commerce) rather than join one.
+description: 'Operator playbook for creating and running a network on NFH fabric as a Network Facilitator Organisation (NFO) — registering the network, onboarding participants, network manifest, signed Rego policies distributed to ONIX, catalog discovery for the network, migrations from Beckn v1 and the central catalog service. Use when the user wants to start or govern a sector network (insurance, mobility, energy, commerce) rather than join one.'
 ---
 
 # Run a network on NFH fabric (NFO playbook)

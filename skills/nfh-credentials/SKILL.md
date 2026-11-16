@@ -1,6 +1,6 @@
 ---
 name: nfh-credentials
-description: Issue, verify and revoke W3C Verifiable Credentials on NFH fabric with VC on Edge (OpenCred) — KYC reuse, licences, capability and delegation credentials for agents. Use when the user wants to prove something about a customer, business or agent, reuse a KYC done elsewhere, give an agent scoped authority, or run the OpenCred Docker image/API.
+description: 'Issue, verify and revoke W3C Verifiable Credentials on NFH fabric with VC on Edge (OpenCred) — KYC reuse, licences, capability and delegation credentials for agents. Use when the user wants to prove something about a customer, business or agent, reuse a KYC done elsewhere, give an agent scoped authority, or run the OpenCred Docker image/API.'
 ---
 
 # VC on Edge (OpenCred): proofs that travel

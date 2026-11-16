@@ -1,6 +1,6 @@
 ---
 name: nfh-observability
-description: NFH fabric Observability & Audit — end-to-end transaction tracing, commitment-chain anchors, verifiable audit trails, anchoring proofs and selective disclosure. Use when the user needs a tamper-evident record for regulators or auditors, wants to trace a transaction across adapters and instances, resolve a dispute without exposing private state, or configure observability in a network manifest.
+description: 'NFH fabric Observability & Audit — end-to-end transaction tracing, commitment-chain anchors, verifiable audit trails, anchoring proofs and selective disclosure. Use when the user needs a tamper-evident record for regulators or auditors, wants to trace a transaction across adapters and instances, resolve a dispute without exposing private state, or configure observability in a network manifest.'
 ---
 
 # Observability & Audit

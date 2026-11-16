@@ -1,6 +1,6 @@
 ---
 name: nfh-transact
-description: Run Beckn Protocol v2 transactions on NFH fabric through the ONIX adapter — select, init, confirm, status, cancel, update and their on_* callbacks. Use when the user is wiring a consumer or provider app to ONIX, writing Beckn v2 payloads, configuring ONIX (keys, routing, schema validation, Rego policies), or debugging NACKs, signature failures or missing callbacks.
+description: 'Run Beckn Protocol v2 transactions on NFH fabric through the ONIX adapter: select, init, confirm, status, cancel, update and their callbacks (on_select, on_init, on_confirm, on_status). Use when the user is wiring a BAP/consumer or BPP/provider app to ONIX, writing Beckn v2 payloads, configuring ONIX keys, routing, schema validation or Rego policies, or debugging NACKs, signature failures, a missing bapUri callback, or "ACK but no on_select".'
 ---
 
 # Transact with Beckn v2 through ONIX

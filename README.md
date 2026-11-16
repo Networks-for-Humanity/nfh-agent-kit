@@ -34,7 +34,8 @@ pi install git:github.com/Networks-for-Humanity/nfh-agent-kit
 | [`.claude-plugin/`](.claude-plugin) | One-command install for Claude Code | Claude Code plugins |
 | [`mcp/`](mcp) | Plan for an MCP server that acts on the sandbox (v2) | [MCP](https://modelcontextprotocol.io) |
 | [`examples/`](examples) | The BNPL insurance-premium walkthrough, and an A2A agent-card template | A2A |
-| [`evals/`](evals) | Tasks an agent with this kit must pass | — |
+| [`evals/`](evals) | 13 tasks an agent with this kit must pass, `run.sh` to run them, and the latest [results](evals/RESULTS.md) | — |
+| [`hooks/`](hooks) | Session-start note that tells the agent NFH terms mean NFH fabric | Claude Code hooks |
 
 ### Skills
 
@@ -63,7 +64,7 @@ Installing `nfh` also connects three documentation servers (MCP), for NFH, Finte
 
 1. Edit or add a skill in `skills/<name>/SKILL.md`. The folder name must match the `name:` field.
 2. Add an eval task to [`evals/tasks.md`](evals/tasks.md).
-3. Run `scripts/check.sh`. It validates frontmatter and checks that every docs link resolves.
+3. Run `scripts/check.sh` (needs `pip install pyyaml`). It validates frontmatter and checks that every docs link resolves.
 
 Docs are the source of truth. Skills link to https://docs.nfh.global pages, and don't copy them.
 

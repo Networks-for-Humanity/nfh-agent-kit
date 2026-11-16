@@ -1,6 +1,6 @@
 ---
 name: nfh-registry
-description: Onboard an organisation onto NFH fabric's registry (REGISTR, built on the DeDi protocol). Use when the user needs to join an NFH network, publish subscriber details (endpoint and public keys), create or verify a namespace on dedi.global, publish DeDi files on their own domain, set up a network as an NFO, add participants, or look up another participant's record.
+description: 'Onboard an organisation onto NFH fabric''s registry (REGISTR, built on the DeDi protocol). Use when the user needs to join an NFH network, publish subscriber details (endpoint and public keys), create or verify a namespace on dedi.global, publish DeDi files on their own domain, set up a network as an NFO, add participants, or look up another participant''s record.'
 ---
 
 # REGISTR: get an identity on NFH fabric

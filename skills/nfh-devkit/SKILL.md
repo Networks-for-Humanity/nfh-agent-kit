@@ -1,6 +1,6 @@
 ---
 name: nfh-devkit
-description: Stand up a working NFH fabric / Beckn v2 network locally in about 10 minutes — consumer node, provider node, ONIX adapters, Redis and a router — using NFH's fabric-devkit or beckn/starter-kit, then run discover → select → init → confirm. Use when the user wants to try NFH hands-on, test payloads, or reproduce an issue before touching a real network.
+description: 'Stand up a working NFH fabric / Beckn v2 network locally in about 10 minutes — consumer node, provider node, ONIX adapters, Redis and a router — using NFH''s fabric-devkit or beckn/starter-kit, then run discover → select → init → confirm. Use when the user wants to try NFH hands-on, test payloads, or reproduce an issue before touching a real network.'
 ---
 
 # Run NFH fabric on your machine

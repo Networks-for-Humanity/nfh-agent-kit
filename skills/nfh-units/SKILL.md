@@ -1,6 +1,6 @@
 ---
 name: nfh-units
-description: Programmable value on NFH fabric with UNITS (Finternet Lab tokenisation) — register token classes, bind token programs and pre/post hooks, mint, transfer, and build purpose-bound vouchers, delegations, locks and escrow. Use when the user wants money or assets that carry rules (e.g. a loan that can only pay an insurance premium), recurring or agent payments, or asks about Finternet / UNITS APIs.
+description: 'Programmable value on NFH fabric with UNITS (Finternet Lab tokenisation): token classes, token programs with pre/post hooks, minting, transfers, purpose-bound vouchers (e.g. vouchers only spendable on insurance premiums), delegations, RBAC, locks, escrow and federation. Use when the user wants money or assets that carry rules, premium or corporate vouchers, recurring or agent payments, or asks about Finternet, UNITS or Vouch.'
 ---
 
 # UNITS: money and assets with rules
@@ -25,9 +25,17 @@ The step-by-step guides are under https://docs.finternetlab.io/documentation/tok
 
 ## Access (tell the user up front)
 
-- A developer token can register token classes.
-- **Config and mint need a JWT from an OTP login.** An agent can't complete that alone, so the user has to sign in and supply the token through an environment variable (for example `UNITS_TOKEN`). Never ask for it in chat.
-- See https://docs.finternetlab.io/documentation/building/api-clients.md
+Every request has a `context` with `id`, `version`, `ts`, `msgId` and **two separate credentials**. Don't mix them up:
+
+| Field | What it is | Where it comes from |
+|---|---|---|
+| `context.developerToken` | The calling app: base64 of `<clientId>:<clientSecret>` | `/v1/clients/register`. See https://docs.finternetlab.io/documentation/building/api-clients.md |
+| `context.authorization` | The end user's session token (JWT) | An OTP login. An agent can't complete it, so the user signs in and supplies the token through an environment variable such as `UNITS_SESSION_TOKEN`. Never ask for it in chat |
+
+- The API reference marks token-class registration as needing the session token too. In practice a developer token alone has been seen to register classes, but config and mint always need the session token. Follow the API reference.
+- Writes can also carry a `signature` (`keyId` plus a JWS of the payload) from the user's registered key.
+- The development server is `https://foundry.finternetlab.io`. Confirm the base URL for the user's instance before calling it.
+- `/v1/tokenclass/{register,update,get,search}` is an undocumented alias of the canonical `/v1/registry/tokenclasses/*`. Prefer the canonical paths.
 
 ## Patterns
 
@@ -38,6 +46,10 @@ The step-by-step guides are under https://docs.finternetlab.io/documentation/tok
 | Escrow or conditional release | Lock, then unlock on a condition |
 | Delivery versus payment | Workflows / multi-sig |
 | Refund that must return to the lender | Lock rules plus a post-hook |
+
+## Program and hook names: never make them up
+
+Program IDs (such as `purpose-bound-voucher`) and hook IDs must come from a Finternet docs page or from the instance's own program and hook registry. If no built-in hook does what the user needs (for example "payee must be an insurer"), say so. Explain that it needs a **custom hook**: a Rust implementation of the `Hook` trait, bound through the token class config. The guides are https://docs.finternetlab.io/documentation/token-manager-guide/custom-programs.md and https://docs.finternetlab.io/documentation/reference/token-program-interface.md. Write placeholder IDs as `<your-hook-id>`, never as names that look real.
 
 ## Finternet docs map (fetch before answering)
 

@@ -1,9 +1,18 @@
 {
   "name": "@networks-for-humanity/nfh-agent-kit",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Skills for building on NFH fabric, packaged for the Pi coding agent (pi.dev)",
   "license": "Apache-2.0",
   "repository": "github:Networks-for-Humanity/nfh-agent-kit",
-  "keywords": ["pi-package", "nfh", "beckn", "agent-skills"],
-  "pi": { "skills": ["./skills"] }
+  "keywords": [
+    "pi-package",
+    "nfh",
+    "beckn",
+    "agent-skills"
+  ],
+  "pi": {
+    "skills": [
+      "./skills"
+    ]
+  }
 }
