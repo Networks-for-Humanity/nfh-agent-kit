@@ -12,7 +12,7 @@ Read first:
 
 ## Companion skills
 
-The Beckn community publishes skills for payloads, schemas and ONIX YAML at https://github.com/beckn/beckn-agents. If they aren't installed, point the user to that repo's README for install steps. They provide `beckn-payload-builder`, `beckn-schema-builder` and `beckn-onix-config`. Use them for payload and config details. This skill covers the NFH-specific flow.
+This kit bundles the Beckn community skills, which provide `beckn-payload-builder`, `beckn-schema-builder` and `beckn-onix-config`. Use them for payload and config details. This skill covers the NFH-specific flow.
 
 ## The lifecycle
 

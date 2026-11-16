@@ -25,7 +25,7 @@ This file tells any coding agent (Claude, Codex, Copilot, Cursor, Gemini and oth
 | Trace transactions, prove what happened | **Observability & Audit** | `nfh-observability` | https://docs.nfh.global/product-documentation/products/observability-audit.md |
 | Start and govern a whole network (NFO) | Manifest, Rego policies, migrations | `nfh-network-operator` | https://docs.nfh.global/build/creating-a-network.md |
 | Explain NFH to executives, regulators, partners | Primer, use cases, personas | `nfh-explain` | https://docs.nfh.global/use-cases/use-cases.md |
-| Beckn payloads, schemas, ONIX YAML, DeDi files | Beckn community skills | `beckn-agents` plugin | https://github.com/beckn/beckn-agents |
+| Beckn payloads, schemas, ONIX YAML, DeDi files, custom devkits | Beckn community skills (bundled) | `beckn-payload-builder`, `beckn-schema-builder`, `beckn-onix-config`, `dedi-onboarding-builder`, `devkit-builder` | https://github.com/beckn/beckn-agents |
 
 If you don't know which piece the user needs, use the `nfh-start` skill first. For offline lookups, every docs page is listed in `llms/docs-index-nfh.md`, `llms/docs-index-finternet.md` and `llms/docs-index-dedi.md`.
 

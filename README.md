@@ -28,7 +28,7 @@ pi install git:github.com/Networks-for-Humanity/nfh-agent-kit
 | Path | What it is | Standard |
 |---|---|---|
 | [`AGENTS.md`](AGENTS.md) | How any coding agent should work with NFH | [AGENTS.md](https://agents.md) |
-| [`skills/`](skills) | Ten step-by-step workflows, listed below | [Agent Skills](https://agentskills.io) |
+| [`skills/`](skills) | 15 step-by-step workflows: 10 NFH skills (listed below) plus 5 bundled Beckn community skills | [Agent Skills](https://agentskills.io) |
 | [`llms/`](llms) | `llms.txt` proposed for nfh.global, the one-file NFH primer, and offline page indexes for the NFH, Finternet and DeDi docs (`scripts/sync-docs.sh`) |
 | [`.mcp.json`](.mcp.json) | Live docs servers for NFH, Finternet and DeDi | MCP | [llms.txt](https://llmstxt.org) |
 | [`.claude-plugin/`](.claude-plugin) | One-command install for Claude Code | Claude Code plugins |
@@ -52,11 +52,7 @@ pi install git:github.com/Networks-for-Humanity/nfh-agent-kit
 | `nfh-network-operator` | Start and govern a network: manifest, Rego policies, migrations |
 | `nfh-explain` | Explain NFH to executives, regulators and partners |
 
-**Beckn community skills** (payloads, schemas, ONIX config, DeDi onboarding, devkits) live in [beckn/beckn-agents](https://github.com/beckn/beckn-agents), and the NFH skills defer to them. Until that repo publishes its own marketplace, load them next to this kit:
-```bash
-git clone https://github.com/beckn/beckn-agents ~/beckn-agents
-claude --plugin-dir ~/beckn-agents/adapters/claude-code
-```
+**Beckn community skills are bundled too:** `beckn-payload-builder`, `beckn-schema-builder`, `beckn-onix-config`, `dedi-onboarding-builder` and `devkit-builder`. They are copied unchanged from [beckn/beckn-agents](https://github.com/beckn/beckn-agents) and refreshed with `scripts/sync-beckn.sh`, and they are not covered by this repo's license (see [NOTICE](NOTICE)).
 
 Installing `nfh` also connects three documentation servers (MCP), for NFH, Finternet and DeDi, so the agent can ask the live docs questions.
 
@@ -74,4 +70,4 @@ https://support.nfh.global/ · [fabric-support](https://github.com/Networks-for-
 
 ## License
 
-Apache-2.0. See [LICENSE](LICENSE).
+Apache-2.0. See [LICENSE](LICENSE). The bundled Beckn skills are third-party material and are excluded: see [NOTICE](NOTICE).

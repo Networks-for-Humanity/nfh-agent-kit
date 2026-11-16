@@ -1,0 +1,15 @@
+NFH agent kit
+Copyright Networks for Humanity. Licensed under the Apache License 2.0 (see LICENSE),
+except for the third-party material listed below.
+
+Third-party material
+--------------------
+skills/beckn-onix-config, skills/beckn-payload-builder, skills/beckn-schema-builder,
+skills/dedi-onboarding-builder, skills/devkit-builder
+
+  Source:  https://github.com/beckn/beckn-agents (adapters/claude-code/skills)
+  Author:  Beckn Protocol Community
+  License: the upstream repository does not declare a license. These folders are
+           redistributed as-is and are NOT covered by this repository's Apache-2.0
+           license. All rights remain with their authors. Each folder's UPSTREAM.md
+           records the exact upstream commit. Refresh with scripts/sync-beckn.sh.

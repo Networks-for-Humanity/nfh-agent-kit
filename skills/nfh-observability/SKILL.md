@@ -28,7 +28,7 @@ The service uses OpenTelemetry for traces and BLAKE2 hashing. Instrument apps wi
 ## Turning it on
 
 - **Network level (NFO):** define observability in the network manifest. See section 8 of https://docs.nfh.global/build/creating-a-network/network-policies/network-manifest.md
-- **Participant level:** enable ONIX structured logs and tracing in the adapter config. The `beckn-onix-config` skill from beckn-agents covers the YAML.
+- **Participant level:** enable ONIX structured logs and tracing in the adapter config. The bundled `beckn-onix-config` skill covers the YAML.
 - **Value layer:** UNITS produces its own SHA-256 commitment chain and BLAKE3 Merkle roots. These are separate from fabric anchors, but they serve the same audit purpose (see `nfh-units`).
 
 ## Typical asks

@@ -36,6 +36,8 @@ Follow https://docs.nfh.global/build/onboarding/file-based.md:
 
 Registry names are conventions. The hard rules are that record names are unique within a registry and that the published URLs are correct. A record's name can be reused as the key ID in the ONIX config.
 
+To generate and sign the DeDi index and registry files, use the bundled `dedi-onboarding-builder` skill.
+
 ## Step 3: Verify with a lookup
 
 ```bash

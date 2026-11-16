@@ -1,7 +1,7 @@
 {
   "name": "nfh",
   "description": "Build on NFH fabric (Networks for Humanity): registry onboarding, catalogue publishing and discovery, Beckn v2 transactions via ONIX, UNITS programmable value, verifiable credentials and a local devkit.",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "author": {
     "name": "Networks for Humanity",
     "url": "https://nfh.global"

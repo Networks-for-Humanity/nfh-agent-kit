@@ -51,6 +51,8 @@ docker compose -f docker-compose-generic.yml logs -f onix-bap onix-bpp
 ngrok http --url=<your-static-domain>.ngrok-free.app 9000
 ```
 
+To build a custom devkit for the user's own domain (compose stack, ONIX config, routing, fixtures), use the bundled `devkit-builder` skill.
+
 ## Then
 
 1. Send `discover`, then `select`, `init` and `confirm` with the kit's Postman collection.
