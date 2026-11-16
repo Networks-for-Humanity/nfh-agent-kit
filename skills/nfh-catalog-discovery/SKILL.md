@@ -18,9 +18,22 @@ Read first: https://docs.nfh.global/build/creating-a-network/catalog-publishing-
    ```json
    "meta": { "catalog_index_urls": [ { "url": "https://cdn.example.com/beckn/index/becknCatalogs.index.json" } ] }
    ```
-5. **Verify.** There's no confirmation callback. Run a `discover` that should match, and check the DISCOVR crawl log for verification failures.
+5. **Verify.** There's no confirmation callback, and a DISCOVR picks up changes on its own next crawl, not instantly.
 
-**If a catalogue never shows up:** check, in order, that `catalog_index_urls` is set, that the files are publicly reachable, that the signature key matches the registry, and that the index digests match the files.
+## If a catalogue never shows up
+
+A provider **cannot read DISCOVR's crawl log**. It belongs to whoever runs that DISCOVR instance, and the crawler's `/crawl/status` endpoint is an operator tool with no provider-facing API. Don't tell the user to "check the crawl log" unless they run the DISCOVR themselves. Work through these checks instead. Each one can be run by the provider:
+
+1. **The record has the link.** Fetch your own record and confirm `meta.catalog_index_urls` is there:
+   ```bash
+   curl -s https://api.dedi.global/dedi/lookup/<your-domain>/<registry-name> | jq '.. | .catalog_index_urls? // empty'
+   ```
+2. **The index is public and current.** `curl -sL -o /dev/null -w '%{http_code}' <index-url>` must return 200, served without auth, and must be the latest signed index rather than a stale cached copy.
+3. **The keys match.** The key that signed the files must be the public key in your record. A key rotation without re-running `catalog-publisher` is a common cause.
+4. **The files weren't hand-edited.** Any edit after signing (even whitespace) breaks the digest or signature, and DISCOVR silently discards the file. Re-publish with `catalog-publisher`.
+5. **See the crawl yourself.** Run your own DISCOVR in `beckn/starter-kit`, or deploy one (https://docs.nfh.global/product-documentation/products/discovr/deploying-your-own-discover.md) with `plugins.crawler.config.networks` set to your network. Your crawler's logs show exactly which check failed: digest mismatch, bad file signature, bad index signature, or a version regression.
+
+If all five pass and the shared DISCOVR still doesn't list you, **ask its operator** to check the crawl status for your subscriber ID. Give them: your subscriber ID, the network ID, your index URL, and the time you last published. Contact them at https://support.nfh.global/ or https://github.com/Networks-for-Humanity/fabric-support.
 
 ## Consumer side: search
 
