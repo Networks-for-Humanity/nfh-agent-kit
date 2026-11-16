@@ -19,7 +19,7 @@ This file tells any coding agent (Claude, Codex, Copilot, Cursor, Gemini and oth
 | Identity: who is on the network, their keys and endpoints | **REGISTR** (built on DeDi) | `nfh-registry` | https://docs.nfh.global/build/onboarding.md |
 | Publish a catalogue once, be found everywhere | Self-hosted signed catalogues + **DISCOVR** | `nfh-catalog-discovery` | https://docs.nfh.global/build/creating-a-network/catalog-publishing-and-discovery.md |
 | Transact: select, init, confirm, status | **Beckn Protocol v2** via the **ONIX** adapter | `nfh-transact` | https://docs.nfh.global/nfh-fabric/open-standards/beckn-protocol.md |
-| Money and assets that carry rules | **UNITS** tokenisation (Finternet Lab) | `nfh-units` | https://docs.finternetlab.io/llms.txt |
+| Money and assets that carry rules | **UNITS** tokenisation (Finternet) | `nfh-units` (NFH context) + `units` (Finternet's full skill) | https://docs.finternetlab.io/llms.txt |
 | Prove things: KYC, licences, delegation | **VC on Edge** (OpenCred) | `nfh-credentials` | https://docs.nfh.global/product-documentation/products/vc-on-edge.md |
 | Run a working network on a laptop | `fabric-devkit` / `beckn/starter-kit` | `nfh-devkit` | https://docs.nfh.global/build/getting-started-with-fabric.md |
 | Trace transactions, prove what happened | **Observability & Audit** | `nfh-observability` | https://docs.nfh.global/product-documentation/products/observability-audit.md |
@@ -54,7 +54,7 @@ Every request carries a `context`: `version` "2.0.0", `action`, `messageId`, `tr
 |---|---|
 | REGISTR, DISCOVR, Beckn v2, ONIX | Production |
 | VC on Edge / OpenCred | Beta |
-| UNITS | Live instances. Writes need a token from an OTP login, so a human has to sign in first |
+| UNITS | Live. Sandbox (sanctum) accepts the fixed OTP `123456`; production writes need a human OTP login |
 | Vouch (purpose-bound value), Pincer (guarantees) | No public API docs yet. Build the same behaviour on UNITS vouchers and pre-hooks |
 | Observability & Audit | Service live; public query API not documented yet |
 

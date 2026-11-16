@@ -7,6 +7,10 @@ description: 'Programmable value on NFH fabric with UNITS (Finternet Lab tokenis
 
 UNITS is a tokenisation system run as independent instances by regulated operators. It is not a blockchain: there is no global consensus and no public token. Docs: https://docs.finternetlab.io/llms.txt (append `.md` to any page URL).
 
+**For field-level detail, load the bundled `units` skill.** It is Finternet's own skill, compiled from the UNITS source and tested against the sandbox. It covers exact payloads, scopes, error codes, worked examples, runnable clients (`examples/units-client.ts`, `units_client.py`, `quickstart.sh`), ready-made token-class JSON and program authoring. This skill gives the NFH context and the patterns. When the two differ on a detail, `units` wins.
+
+The OpenAPI and JSON-LD schemas (including an `nfh-voucher` token-class schema) are at https://github.com/finternet-io/specs. They are licensed CC BY-NC-SA, so link to them; don't copy them.
+
 ## Concepts (read before writing code)
 
 - Tokens and pools: https://docs.finternetlab.io/documentation/concepts/tokens-and-tokenpools.md. In **native** pools UNITS is the authoritative ledger. In **proxy** pools an external ledger is authoritative and UNITS shadows it.
@@ -29,13 +33,17 @@ Every request has a `context` with `id`, `version`, `ts`, `msgId` and **two sepa
 
 | Field | What it is | Where it comes from |
 |---|---|---|
-| `context.developerToken` | The calling app: base64 of `<clientId>:<clientSecret>` | `/v1/clients/register`. See https://docs.finternetlab.io/documentation/building/api-clients.md |
-| `context.authorization` | The end user's session token (JWT) | An OTP login. An agent can't complete it, so the user signs in and supplies the token through an environment variable such as `UNITS_SESSION_TOKEN`. Never ask for it in chat |
+| `context.developerToken` | The calling app (a service account): base64 of `<clientId>:<clientSecret>` | Self-serve in the web portal's **API Access** page. Calling `/v1/clients/register` directly returns 403, because it needs a superadmin |
+| `context.authorization` | `Bearer <jwt>`: the end user's session (the HTTP `Authorization` header is **not** read) | OTP login (`/v1/account/login`). The access token lasts about 10 h, but the session idles out after 30 min without `/v1/account/refresh`, and refresh tokens are single-use |
 
-- The API reference marks token-class registration as needing the session token too. In practice a developer token alone has been seen to register classes, but config and mint always need the session token. Follow the API reference.
-- Writes can also carry a `signature` (`keyId` plus a JWS of the payload) from the user's registered key.
-- The development server is `https://foundry.finternetlab.io`. Confirm the base URL for the user's instance before calling it.
-- `/v1/tokenclass/{register,update,get,search}` is an undocumented alias of the canonical `/v1/registry/tokenclasses/*`. Prefer the canonical paths.
+| Environment | API | OTP |
+|---|---|---|
+| Sandbox ("sanctum") | `https://units.sanctum.finternetlab.io` (portal `sanctum.finternetlab.io`). Up about 08:00–21:00 IST on weekdays | The fixed OTP `123456` is accepted, but send-OTP may still email or text a real contact, so use test identities you control |
+| Production | `https://units.finternetlab.io` (portal `my.finternetlab.io`) | Real OTP only. There is no non-OTP operator path yet |
+
+- In production an agent can't complete the OTP login. The user signs in and supplies the session through an environment variable such as `UNITS_SESSION_TOKEN`. Never ask for it in chat.
+- Writes can also carry a `signature` (`keyId` plus a JWS of the JCS-canonical payload) from a key registered with `/v1/account/keys/register`.
+- `/v1/tokenclass/{register,update,get,search}` and `/v1/registry/tokenclasses/*` hit the same controller. Either works.
 
 ## Patterns
 

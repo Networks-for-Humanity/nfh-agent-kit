@@ -19,3 +19,4 @@ Each task is a prompt given to a fresh agent with only this kit installed, plus 
 | 10 | nfh-network-operator | "I want to start an insurance network on NFH fabric in Indonesia" | Asks the setup questions, follows the five-step path, and says policies must be signed and referenced in the manifest |
 | 11 | nfh-explain | "Explain NFH to a bank CEO in 5 bullets" | Plain language, no protocol jargon, and gives the 15-vs-6 integrations point |
 | 12 | nfh-units | "How do delegations work in UNITS?" | Fetches or cites the Finternet delegation-and-RBAC page |
+| 13 | units | "How do I log in to the UNITS sandbox from a script, without a real OTP?" | Gives the sanctum URL and the fixed OTP `123456`, warns that send-OTP can still reach a real contact, and keeps developerToken and authorization separate |

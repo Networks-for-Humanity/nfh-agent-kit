@@ -28,7 +28,7 @@ pi install git:github.com/Networks-for-Humanity/nfh-agent-kit
 | Path | What it is | Standard |
 |---|---|---|
 | [`AGENTS.md`](AGENTS.md) | How any coding agent should work with NFH | [AGENTS.md](https://agents.md) |
-| [`skills/`](skills) | 15 step-by-step workflows: 10 NFH skills (listed below) plus 5 bundled Beckn community skills | [Agent Skills](https://agentskills.io) |
+| [`skills/`](skills) | 16 step-by-step workflows: 10 NFH skills (listed below), Finternet's `units` skill, and 5 Beckn community skills | [Agent Skills](https://agentskills.io) |
 | [`llms/`](llms) | `llms.txt` proposed for nfh.global, the one-file NFH primer, and offline page indexes for the NFH, Finternet and DeDi docs (`scripts/sync-docs.sh`) |
 | [`.mcp.json`](.mcp.json) | Live docs servers for NFH, Finternet and DeDi | MCP | [llms.txt](https://llmstxt.org) |
 | [`.claude-plugin/`](.claude-plugin) | One-command install for Claude Code | Claude Code plugins |
@@ -51,6 +51,8 @@ pi install git:github.com/Networks-for-Humanity/nfh-agent-kit
 | `nfh-observability` | Trace transactions and get audit proofs |
 | `nfh-network-operator` | Start and govern a network: manifest, Rego policies, migrations |
 | `nfh-explain` | Explain NFH to executives, regulators and partners |
+
+**Finternet's `units` skill is bundled** (MIT, from [finternet-io/units-skills](https://github.com/finternet-io/units-skills), refreshed with `scripts/sync-finternet.sh`). It is the deep reference for UNITS: payloads, scopes, errors, runnable clients and program authoring.
 
 **Beckn community skills are bundled too:** `beckn-payload-builder`, `beckn-schema-builder`, `beckn-onix-config`, `dedi-onboarding-builder` and `devkit-builder`. They are copied unchanged from [beckn/beckn-agents](https://github.com/beckn/beckn-agents) and refreshed with `scripts/sync-beckn.sh`, and they are not covered by this repo's license (see [NOTICE](NOTICE)).
 
