@@ -19,8 +19,9 @@ Run with `evals/run.sh`: a fresh Claude Code agent (2.1.63), only this kit loade
 | 10 | nfh-network-operator | Fail (answered about OJK licensing) | Pass | Prompt says NFH. Now opens with the setup question |
 | 11 | nfh-explain | Partial (jargon, missed the integration math) | Pass | CEO must-haves: the 15-vs-6 math and no product names |
 | 12 | nfh-units | Pass | Pass | — |
+| 13 | units (Finternet) | Fail (invented `/v1/auth/otp/*` endpoints) | Pass | Exact `/v1/account/login` recipe in nfh-units, plus "read auth-and-onboarding.md before auth code" (v0.4.0) |
 
-**Final: 12 pass, 1 partial (expected), 0 fail.**
+**Final: 13 pass, 1 partial (expected), 0 fail.**
 
 Also found during these runs:
 - **UNITS endpoints:** the Finternet guides use `/v1/tokenclass/register`, and the API reference uses `/v1/registry/tokenclasses/register` (canonical). Both work; the skill now says so.

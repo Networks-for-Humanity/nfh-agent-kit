@@ -41,6 +41,17 @@ Every request has a `context` with `id`, `version`, `ts`, `msgId` and **two sepa
 | Sandbox ("sanctum") | `https://units.sanctum.finternetlab.io` (portal `sanctum.finternetlab.io`). Up about 08:00–21:00 IST on weekdays | The fixed OTP `123456` is accepted, but send-OTP may still email or text a real contact, so use test identities you control |
 | Production | `https://units.finternetlab.io` (portal `my.finternetlab.io`) | Real OTP only. There is no non-OTP operator path yet |
 
+### Login recipe (exact; don't invent other auth endpoints)
+
+There is **no** `/v1/auth/*` path. Login is one endpoint, `POST /v1/account/login`, called twice. Both calls need the developer token (scope `accounts:manage`):
+
+```json
+{ "context": { "id": "api.account.login", "version": "1.0", "ts": "<ISO-8601>", "msgId": "<uuid>",
+               "developerToken": "<base64 clientId:clientSecret>" },
+  "payload": { "username": "<email or phone>" } }
+```
+Then send the same request again with `"payload": { "username": "<same>", "otp": "123456" }` (the fixed sandbox OTP). If the account exists, the response holds `accessToken`, `refreshToken`, `expiresIn: 36000` and `refreshExpiresIn: 1800`. If `isExisting` is false, the token is an OTP JWT that can only call `/v1/account/create`. Keep a session alive with `POST /v1/account/refresh` (`payload.refreshToken`) on a timer under 30 minutes, behind a single-flight lock: reusing a refresh token revokes the whole session. Full detail is in `units` → `references/auth-and-onboarding.md` §4 and §6. **Read that file before writing any auth code.**
+
 - In production an agent can't complete the OTP login. The user signs in and supplies the session through an environment variable such as `UNITS_SESSION_TOKEN`. Never ask for it in chat.
 - Writes can also carry a `signature` (`keyId` plus a JWS of the JCS-canonical payload) from a key registered with `/v1/account/keys/register`.
 - `/v1/tokenclass/{register,update,get,search}` and `/v1/registry/tokenclasses/*` hit the same controller. Either works.
