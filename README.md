@@ -51,7 +51,11 @@ pi install git:github.com/Networks-for-Humanity/nfh-agent-kit
 | `nfh-network-operator` | Start and govern a network: manifest, Rego policies, migrations |
 | `nfh-explain` | Explain NFH to executives, regulators and partners |
 
-The marketplace also lists **`beckn-agents`** (`/plugin install beckn-agents@nfh`): the Beckn community's own skills for payloads, schemas, ONIX config, DeDi onboarding and devkits. They're pulled straight from [beckn/beckn-agents](https://github.com/beckn/beckn-agents), so they stay current.
+**Beckn community skills** (payloads, schemas, ONIX config, DeDi onboarding, devkits) live in [beckn/beckn-agents](https://github.com/beckn/beckn-agents), and the NFH skills defer to them. Until that repo publishes its own marketplace, load them next to this kit:
+```bash
+git clone https://github.com/beckn/beckn-agents ~/beckn-agents
+claude --plugin-dir ~/beckn-agents/adapters/claude-code
+```
 
 Installing `nfh` also connects three documentation servers (MCP), for NFH, Finternet and DeDi, so the agent can ask the live docs questions.
 

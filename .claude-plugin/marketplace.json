@@ -13,16 +13,6 @@
       "name": "nfh",
       "source": "./",
       "description": "Skills for building on NFH fabric"
-    },
-    {
-      "name": "beckn-agents",
-      "source": {
-        "source": "git-subdir",
-        "url": "beckn/beckn-agents",
-        "path": "adapters/claude-code",
-        "ref": "main"
-      },
-      "description": "Beckn community skills: Beckn v2 payloads, schemas, ONIX config, DeDi onboarding, devkit builder. Maintained upstream at github.com/beckn/beckn-agents."
     }
   ]
 }
