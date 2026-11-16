@@ -55,3 +55,7 @@ Docs are the source of truth. Skills link to https://docs.nfh.global pages, and 
 ## Help
 
 https://support.nfh.global/ · [fabric-support](https://github.com/Networks-for-Humanity/fabric-support)
+
+## License
+
+Apache-2.0. See [LICENSE](LICENSE).
